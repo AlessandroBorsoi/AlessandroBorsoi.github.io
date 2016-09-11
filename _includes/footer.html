@@ -4,7 +4,6 @@
          <section>Published with <a class="icon-ghost" href="https://jekyllrb.com/">Jekyll</a></section>
     </div>
     <div class="social-icons">
-
         {% if site.owner.linkedin %}
         <a href="https://www.linkedin.com/in/{{ site.owner.linkedin }}">
             <span class="fa-stack fa-lg">
@@ -53,7 +52,13 @@
             </span>
         </a>
         {% endif %}
+        <a href="{{ site.url }}/feed.xml">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-rss fa-stack-1x"></i>
+            </span>
+        </a>
     </div>
-    
+
     <div class="cf"></div>
 </footer>
