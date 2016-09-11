@@ -6,7 +6,7 @@ share:            true
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-url:        	  https://alessandroborsoi.github.io
+#url:        	  https://alessandroborsoi.github.io
 
 # Gems
 gems: [jekyll-paginate]
@@ -17,8 +17,9 @@ owner:
   avatar:         alessandroborsoi.jpg
   email:          alessandro.borsoi1984@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Awesome Dude, Awesome Life
+  description:    Description
   # Social networking links used in footer. Update and remove as you like.
+  linkedin:       alessandro-borsoi-859483a4
   twitter:        aleborsoi_
   github:         alessandroborsoi
   #facebook:       alessandroborsoi
@@ -44,7 +45,7 @@ links:
   - title: Categories
     url: /categories
   - title: About
-    url: /hossain-mohd-faysal
+    url: /alessandro-borsoi
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Rome
