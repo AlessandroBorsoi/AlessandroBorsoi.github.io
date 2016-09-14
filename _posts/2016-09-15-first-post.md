@@ -1,16 +1,15 @@
 ---
 layout: post
-title: Test
-description: "Its ON, baby"
+title: First post
+description: "First post"
 headline: "Let's Fire up the Engines"
-categories: test
+categories: general
 tags: 
-  - test
-  - jekyll
-comments: false
+  - general
+comments: true
 mathjax: null
 featured: true
 published: true
 ---
 
-*Test*
+*First post*
