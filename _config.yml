@@ -9,7 +9,7 @@ share:            true
 #url:        	  https://alessandroborsoi.github.io
 
 # Gems
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-feed]
 
 # Owner/author information
 owner:
