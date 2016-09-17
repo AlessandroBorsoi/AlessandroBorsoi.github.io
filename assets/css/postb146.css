@@ -250,8 +250,11 @@ html, body, .summer-post-container, .summer-post-header {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.post-template .summer-post-content {
+article {
     text-align: justify;
+}
+
+.post-template .summer-post-content {
     margin: 0 auto;
     padding: 0;
 }
