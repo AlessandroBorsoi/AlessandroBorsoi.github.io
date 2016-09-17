@@ -9,11 +9,11 @@ tags:
 comments: true
 mathjax: null
 featured: true
-published: true
+published: false
 ---
 # Sorting Algorithms - Part 1
-The pourpose of these series of articles is digging into the sorting algorithms throught 
-the implementtion of some of them. Here I will discuss the general idea of the recursive 
+The purpose of these series of articles is digging into the sorting algorithms throught 
+the implementation of some of them. Here I will discuss the general idea of the recursive 
 sort and the merge sort in particular.
 
 ## Recursive sort
@@ -86,7 +86,7 @@ by the parameters:
 * `j` from `middle + 1` to `right`;
 * `k` from `left` to `right` of the support array `temp`;
 
-The first while loop iterate in parallel throught the left and right part of the array
+The first while loop iterate in parallel through the left and right part of the array
 and store the ordered values in the support array `temp`. Then, when one part or 
 another reach the end, the second or the third loop begin to complete the copy of the
 unfinished part of the array. The final for loop back copies the ordered values

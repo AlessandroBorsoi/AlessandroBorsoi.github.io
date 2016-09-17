@@ -9,10 +9,10 @@ tags:
 comments: true
 mathjax: null
 featured: true
-published: true
+published: false
 ---
 # Sorting Algorithms - Part 2
-In this second part I am going to look at anothor recursive sorting algorithm: 
+In this second part I am going to look at another recursive sorting algorithm: 
 `QuickSort`.
 
 ## QuickSort
