@@ -31,7 +31,7 @@ solved directly. The solutions to the sub-problems are then combined to give a s
 to the original problem.
 
 A general pattern of this definition can be translated with the following eight lines of C:
-```
+```c
 void RecursiveSort(int Array[], int left, int right) {
     if (left < right) {
         int middle = Partition(Array, left, right);
@@ -48,7 +48,7 @@ In the latter there is no `Merge` because all the work, pivoting and sorting, is
 
 ### MergeSort
 Let's see in detail the merge sort algorithm.
-```
+```c
 void MergeSort(int Array[], int left, int right) {
     if (left < right) {
         int middle = (left + right) / 2;
@@ -64,7 +64,7 @@ In the case of `left = right` we have a single element left that is, by definiti
 already ordered. So no operation is needed further.
 
 A possible implementation for `Merge` can be:
-```
+```c
 void Merge(int Array[], int left, int middle, int right) {
     int i = left;
     int j = middle + 1;
