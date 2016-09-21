@@ -6,26 +6,31 @@ headline: "Let's Fire up the Engines"
 categories: algorithms
 tags: 
   - algorithms
+  - recursive sort
+  - merge sort
+  - sorting
+  - recursion
 comments: true
 mathjax: null
 featured: true
-published: false
+published: true
 ---
-# Sorting Algorithms - Part 1
-The purpose of these series of articles is digging into the sorting algorithms throught 
-the implementation of some of them. Here I will discuss the general idea of the recursive 
-sort and the merge sort in particular.
+### Sorting Algorithms
+Some of the first topics a computer science degree dig into in the early courses are the sorting algorithms. 
+The `MergeSort` and the `QuickSort` are those treated typically in the beginning as a well suited examples of recursion, 
+together with another classic problem easy to solve with this technique: 
+the [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi "Tower of Hanoi").
+Let's start to look at the common characteristics of the two recursive sorting algorithms.
 
-## Recursive sort
-The basics of this class of algorithms is the principle of 
-[divide and conquer](https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms 
-"Divide and conquer"):
+### Recursive sort
+The basic principle of this class of algorithms is: 
+[divide and conquer](https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms "Divide and conquer"):
 > A divide and conquer algorithm works by recursively breaking down a problem into two 
 or more sub-problems of the same or related type, until these become simple enough to be 
 solved directly. The solutions to the sub-problems are then combined to give a solution 
 to the original problem.
 
-A general pattern of this definition can be the following:
+A general pattern of this definition can be translated with the following eight lines of C:
 ```
 void RecursiveSort(int Array[], int left, int right) {
     if (left < right) {
@@ -36,13 +41,12 @@ void RecursiveSort(int Array[], int left, int right) {
     }
 }
 ``` 
-The code above is valid both for the `MergeSort` and the `QuickSort` with the difference 
-in the "distribution of work". In the former, the `Partition` function return the middle 
-of the array with no further operations. The sorting part is performed only in the 
-`Merge` function. In the latter, the `Merge` call is useless because all the confronting 
-work is done in the `Partition`.    
+The code above is valid for both the `MergeSort` and the `QuickSort` with the main difference in the _work distribution_. 
+In the former, `Partition` returns the middle of the array with no further operations. 
+The sorting part is performed only by `Merge`. 
+In the latter there is no `Merge` because all the work, pivoting and sorting, is done by the `Partition`.
 
-## MergeSort
+### MergeSort
 Let's see in detail the merge sort algorithm.
 ```
 void MergeSort(int Array[], int left, int right) {
@@ -57,9 +61,9 @@ void MergeSort(int Array[], int left, int right) {
 As already said, the `Merge` function do all the comparison work. The array is splitted
 in half on every recursive call until two elements remain `(left < right)`.
 In the case of `left = right` we have a single element left that is, by definition, 
-alredy ordered. So no operation is needed.
+already ordered. So no operation is needed further.
 
-A possible implementation for `Merge`:
+A possible implementation for `Merge` can be:
 ```
 void Merge(int Array[], int left, int middle, int right) {
     int i = left;
@@ -92,7 +96,7 @@ another reach the end, the second or the third loop begin to complete the copy o
 unfinished part of the array. The final for loop back copies the ordered values
 in the target array.
 
-## Performance
+### Performance
 Now let's see how many calls are needed to complete a sort. At any call, the number of 
 elements affected by the `Merge` halve. There is a balanced binary tree.
 The space complexity is dependend by the maximum number of stack frame simultaneus
