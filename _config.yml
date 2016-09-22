@@ -1,5 +1,5 @@
 title:            alessandro borsoi
-description:      "Coming soon"
+description:      "Ones and Zeros"
 logo:             logo3.png
 disqus_shortname: alessandroborsoi
 share:            true
@@ -44,6 +44,8 @@ links:
     url: /featured
   - title: Categories
     url: /categories
+  - title: Tags
+    url: /tags
   - title: About
     url: /alessandro-borsoi
 

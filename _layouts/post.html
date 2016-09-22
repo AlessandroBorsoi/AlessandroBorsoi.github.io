@@ -20,53 +20,63 @@
               <a href="#"><i class="fa fa-times"></i></a>
             </li>
             {% for link in site.links %}
-            <li>{% if link.external %}
-              <a href="{{ link.url }}">{{ link.title }}</a>
-              {% else %}
-              <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-              {% endif %}
-            </li>
+              <li>
+                {% if link.external %}
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                {% else %}
+                  <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                {% endif %}
+              </li>
             {% endfor %}
           </ul>
         </div>
       </div>
       <div class="summer-post-title bg-check">
         <h1>{{ page.title }}</h1>
-        <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on
-          {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip"
-                                       title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last
-          %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong>
+        <p>by
+          <strong>{{ site.owner.name }}</strong> &#8212;
+          {% assign tagsize = page.tags.size %}
+          {% if tagsize != 0 %} on
+            {% for tag in page.tags %}
+              <a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}"
+                  data-toggle="tooltip"
+                  title="Posts tagged with {{ tag }}"
+                  rel="tag">{{ tag }}</a>{% unless forloop.last %}&comma;&nbsp;{% endunless %}
+            {% endfor %}
+          {% endif %}
+          <strong>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
-          </strong></p>
+          </strong>
+        </p>
       </div>
       <div class="bg-img"></div>
     </header>
     <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
-    {% if page.imagefeature %}<img src="{{ site.url }}/images/{{ page.imagefeature }}" alt="cover-image"/>{% endif %}
+    {% if page.imagefeature %}
+      <img src="{{ site.url }}/images/{{ page.imagefeature }}" alt="cover-image"/>
+    {% endif %}
     <article class="summer-post-content post">
-      <div>{{ content }}
-      </div>
+      <div>{{ content }}</div>
     </article>
     <div class="cf"></div>
     {% if site.share %}{% include share.html %}{% endif %}
     <div class="cf"></div>
 
-    {% include signoff.html %}
+    <!--{% include signoff.html %}-->
 
     <div class="cf"></div>
     {% if site.disqus_shortname and page.comments == true %}
-    <section class="summer-disqus row">
-      <div class="small-12 columns">
-        <h1 class="summer-comments-header">Comments</h1>
-        <div id="disqus_thread"></div>
-        {% include disqus_comments.html %}
-      </div>
-    </section>
+      <section class="summer-disqus row">
+        <div class="small-12 columns">
+          <h1 class="summer-comments-header">Comments</h1>
+          <div id="disqus_thread"></div>
+          {% include disqus_comments.html %}
+        </div>
+      </section>
     {% endif %}
     <div class="cf"></div>
-
     {% include footer.html %}
   </main>
-  {% include scripts.html %}
+{% include scripts.html %}
 </body>
 </html>
