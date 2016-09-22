@@ -2,7 +2,7 @@
 layout: post
 title: MergeSort
 description: "MergeSort"
-headline: "Let's Fire up the Engines"
+headline: "Let's Sort it up"
 categories: algorithms
 tags: 
   - algorithms
@@ -17,7 +17,7 @@ published: true
 ---
 ### Sorting Algorithms
 Some of the first topics a computer science degree dig into in the early courses are the sorting algorithms. 
-The `MergeSort` and the `QuickSort` are those treated typically in the beginning as a well suited examples of recursion, 
+The **Merge** and the **Quick** **Sort** are those treated typically in the beginning as a well suited examples of recursion, 
 together with another classic problem easy to solve with this technique: 
 the [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi "Tower of Hanoi").
 Let's start to look at the common characteristics of the two recursive sorting algorithms.
