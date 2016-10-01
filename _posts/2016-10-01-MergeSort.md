@@ -102,7 +102,7 @@ the second or the third `while`. The `for` loop recopy the now ordered values fr
 
 If, at the end of `Merge`, we print out the elements ordered with something like this:
 
-```
+```c
 for (int i = left; i < right + 1; ++i) {
     printf("|%d|", Array[i]);
 }
