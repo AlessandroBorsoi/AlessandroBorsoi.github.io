@@ -13,7 +13,7 @@ tags:
 comments: true
 mathjax: null
 featured: true
-published: false
+published: true
 ---
 ### Sorting Algorithms
 Some of the first topics a computer science degree dig into in the early courses are the sorting algorithms. 
