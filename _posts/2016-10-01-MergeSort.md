@@ -30,6 +30,7 @@ or related type, until these become simple enough to be solved directly. The sol
 combined to give a solution to the original problem.
 
 A general pattern of this definition can be translated with the following eight lines of C:
+
 ```c
 void RecursiveSort(int Array[], int left, int right) {
     if (left < right) {
@@ -48,6 +49,7 @@ Of course in this example the assumption is that we want to order an array of in
 
 ### MergeSort
 Let's see in detail the merge sort algorithm.
+
 ```c
 void MergeSort(int Array[], int left, int right) {
     if (left < right) {
@@ -66,6 +68,7 @@ Indeed, at every step, the `Merge` function will handle the two half of the arra
 right) that are already ordered by the previous steps. So the task will be to order all the elements left to right.
 
 A possible implementation for `Merge` can be:
+
 ```c
 void Merge(int Array[], int left, int middle, int right) {
     int i = left;
@@ -98,6 +101,7 @@ of the `Array`) are greater than the ones already in the `temp` and can be inser
 the second or the third `while`. The `for` loop recopy the now ordered values from `temp` to `Array`.
 
 If, at the end of `Merge`, we print out the elements ordered with something like this:
+
 ```
 for (int i = left; i < right + 1; ++i) {
     printf("|%d|", Array[i]);
@@ -105,6 +109,7 @@ for (int i = left; i < right + 1; ++i) {
 printf("\n");
 ```
 with an input like this: `int Array[] = {23, 14, 32, 36, 9, 3, 40, 25, 11};` the result will be:
+
 ```
 |14||23|
 |14||23||32|
