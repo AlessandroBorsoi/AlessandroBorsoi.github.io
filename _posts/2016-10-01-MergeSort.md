@@ -25,6 +25,7 @@ Let's start to look at the common characteristics of this two recursive sorting 
 ### Recursive sort
 The basic principle of this class of algorithms is 
 [divide and conquer](https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms "Divide and conquer"):
+
 > A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same 
 or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then 
 combined to give a solution to the original problem.
