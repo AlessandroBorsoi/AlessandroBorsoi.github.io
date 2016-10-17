@@ -13,10 +13,10 @@ tags:
 comments: true
 mathjax: null
 featured: true
-published: false
+published: true
 ---
 ### Sorting Algorithms - Part 2
-In this second part (here the [first part](http://alessandroborsoi.com/algorithms/MergeSort)) I am going to look at 
+In this second part (here the [first](http://alessandroborsoi.com/algorithms/MergeSort)) I am going to look at 
 another recursive sorting algorithm: the **Quick Sort**.
 
 ### QuickSort
@@ -31,18 +31,19 @@ void QuickSort(int Array[], int left, int right) {
     }
 }
 ```
-The first thing to notice is the absence of the `Merge` function present in the `MergeSort` algorithm. The reason is 
+The first thing to notice is the absence of the `Merge` function of the `MergeSort` algorithm. The reason is 
 that all the comparison work is made by `Partition` at the beginning. Like the other algorithm, the recursive call is
 made until there are at least 2 elements in the `Array` (`left < right`). A single element is, as said, already 
 ordered and no further actions are needed. The portion of the `Array` to order is then passed to the core function of
-the algorithm (`Partition`) which made 2 things:
+the algorithm (`Partition`). It made 2 things:
  
- * returns a index of the array, the `pivot`, between left and right inclusive;
- * makes sure that every values on the left side of the `pivot` are less than the value of the `pivot` and every values
-  on the right side is greater or equal than the value of the `pivot`.
+ * returns an index of the array, the `pivot`, between the left and the right limits of tha `Array` inclusive;
+ * makes sure that, at the end of the call, every values on the left side of the `pivot` are less than the value of 
+ the `pivot` and every values on the right side is greater or equal than the value of the `pivot`.
  
 It is easy to see that, at every step of the recursion, both the left and the right side is passed to the `Partition`
- until the whole structure is sorted. The `pivot` is excluded at every step because is already in the right place.  
+ until the whole structure is sorted. The `pivot` is excluded at every step because is by definition already in the 
+ right place.  
 
 A possible implementation of the `Partition` function can be:
 
@@ -73,8 +74,12 @@ The first step of the `Partition` is to swap the first value on the left with th
 of the `Array` taken care of. The new element on the `left` position is now the `pivot`; its value and its position are 
 saved in 2 variables: `pivotValue` and `pivot` respectively. The `for` loop now checks all the elements from `left + 
 1` to `right` and compare the value of the element indexed with the `pivotValue`. If the element found is less than 
-the pivot one, then the `pivot` is incremented by one and the new value swapped with `i`.
-The 
+the pivot (`if (Array[i] < pivotValue)`), it means that it is in the wrong part of the `Array` so: the pivot index is
+ incremented by one (to make place for the just founded value) and the value swapped. This is iterate until the end 
+ of the part of the `Array` considered. At the end of the loop, the value in `left` and the value in `pivot` are 
+ swapped again. The value in `left` contains the value of the `pivot`; the value in `pivot` contains a value less 
+ than that of the `pivot`. From `pivot + 1` all the values remain, if exist, are greater or equal than the value of 
+ `pivot`. In the end of the function all the elements left to `pivot` are less than the ...
 
 ### Complexity
 The **Quick Sort** has a _best case_ and a _worst case_ based on the position of the pivot. When the pivot is always 
