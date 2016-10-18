@@ -42,7 +42,7 @@ the algorithm (`Partition`). It made 2 things:
  the `pivot` and every values on the right side is greater or equal than the value of the `pivot`.
  
 It is easy to see that, at every step of the recursion, both the left and the right side is passed to the `Partition`
- until the whole structure is sorted. The `pivot` is excluded at every step because is by definition already in the 
+ until the whole structure is sorted. The `pivot` is excluded at every step because it is by definition already in the 
  right place.  
 
 A possible implementation of the `Partition` function can be:
@@ -61,7 +61,7 @@ int Partition(int Array[], int left, int right) {
 }
 ```
 A `Swap` function is used for clarity: it performs no more than the change of position of the 2 elements passed as 
-parameter.
+parameter as index of the `Array`.
 
 ```c
 void Swap(int index1, int index2, int Array[]) {
@@ -74,20 +74,26 @@ The first step of the `Partition` is to swap the first value on the left with th
 of the `Array` taken care of. The new element on the `left` position is now the `pivot`; its value and its position are 
 saved in 2 variables: `pivotValue` and `pivot` respectively. The `for` loop now checks all the elements from `left + 
 1` to `right` and compare the value of the element indexed with the `pivotValue`. If the element found is less than 
-the pivot (`if (Array[i] < pivotValue)`), it means that it is in the wrong part of the `Array` so: the pivot index is
- incremented by one (to make place for the just founded value) and the value swapped. This is iterate until the end 
- of the part of the `Array` considered. At the end of the loop, the value in `left` and the value in `pivot` are 
- swapped again. The value in `left` contains the value of the `pivot`; the value in `pivot` contains a value less 
- than that of the `pivot`. From `pivot + 1` all the values remain, if exist, are greater or equal than the value of 
- `pivot`. In the end of the function all the elements left to `pivot` are less than the ...
+the pivot (`if (Array[i] < pivotValue)`), it means that it is in the wrong part of the `Array` so: 
+
+* the pivot index is incremented by one (to make place for the just founded value) 
+* and the element is swapped in the new `pivot` index. 
+
+This is iterate until the end of the `Array` (the part considered of it). At the end of the loop, the value in `left` 
+and the value in `pivot` are swapped again because the value in `left` contains the value of the `pivot` and the value
+ in `pivot` contains a value less than that of the `pivot`. From `pivot + 1` all the values remain, if they exist, are 
+ greater or equal than the value of `pivot`. The recursion is then take place to the left (`left` to `pivot -1`) and 
+ right part (`pivot + 1` to `right`) until the full sorting.
 
 ### Complexity
 The **Quick Sort** has a _best case_ and a _worst case_ based on the position of the pivot. When the pivot is always 
-in the center of the structure considered, the recursive calls form a balanced binary tree exactly like the **Merge 
-Sort**. So the complexity is the same.
+in the center of the structure considered (best case), the recursive calls form a balanced binary tree exactly like the 
+**Merge Sort**. So the complexity analysis is the same.
 
-The worst case is happening when the pivot is always on the outermost of the structure. In this way, instead of 
-having a balanced tree of _log<sub><sub>2</sub></sub>n_ levels, there will be _n_ (minus 1) levels for a space 
-complexity of _O(n)_. For the time complexity let's look at how many confronting the `Partition` makes at every level:
-At the first level it makes _n_ operation, at the second level _n - 1_, at third _n - 2_ and so on until 1 operation 
-at the last level.
+In the worst the pivot is always the outermost element of the data structure. In this way, instead of having a 
+balanced tree of $$log_2n$$ levels, there will be $$n$$ (minus 1) levels for a space complexity of $$O(n)$$. For the 
+time complexity let's look at how many confronting the `Partition` makes at every level:
+at the first level it makes $$n$$ (minus 1, as usual) operations, at the second level $$n - 1$$, at third $$n - 2$$ 
+and so on until 1 operation at the last level. So: 
+
+$$n + (n - 1) + (n - 2) + \ldots + 1$$ = $$\frac{n(n - 1)}{2}$$ = $$O(n^2)$$

@@ -127,13 +127,12 @@ In this manner it is easy to follow the sequence of split and ordering made by t
 If we would study the complexity of this algorithm, as per any recursive algorithm at all, beside the time complexity
  is important to look also at the space complexity. The latter is dependent by the maximum number of stack frame 
 simultaneous occurring. At any step the number of elements affected by the `Merge` halve, so the result of this will 
-be a balanced binary tree. It is possible to count the number of levels as *log*<sub>*<sub>2</sub>*</sub>*n* so the 
-complexity will be *O*(*log*<sub>*<sub>2</sub>*</sub>n).
+be a balanced binary tree. It is possible to count the number of levels as $$log_2n$$ so the complexity will be 
+$$O(log_2n)$$.
 
 <img class="image-post" src="{{ site.url }}/images/mergesort/merge-sort-recursion-tree.png" alt="MergeSort Recursion 
 Tree">
 
 The time complexity is affected by the number of comparison in the `Merge` function. At first level it is called once 
-and operate n (minus 1) checks in the worst case. At the second level it is called twice on *n*/2 checks each and so 
-on. So, for every *log*<sub>*<sub>2</sub>*</sub>n level, there are n calls for a complexity of *O*
-(*n*⋅*log*<sub>*<sub>2</sub>*</sub>n).
+and operate $$n$$ (minus 1) checks in the worst case. At the second level it is called twice on $$\frac{n}{2}$$ checks 
+each and so on. So, for every $$log_2n$$ level, there are $$n$$ calls for a complexity of $$O(n⋅log_2n)$$.
