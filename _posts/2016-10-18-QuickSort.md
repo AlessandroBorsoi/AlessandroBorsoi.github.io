@@ -2,7 +2,7 @@
 layout: post
 title: QuickSort
 description: "QuickSort"
-headline: "Let's Fire up the Engines"
+headline: "Let's Sort it up, again"
 categories: algorithms
 tags: 
   - algorithms
